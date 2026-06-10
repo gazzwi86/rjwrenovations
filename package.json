@@ -8,7 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && aws s3 sync dist/ s3://rjwrenovations.co.uk --delete --profile gazzwi86 && aws cloudfront create-invalidation --distribution-id $CF_DIST_ID --paths '/*' --profile gazzwi86"
+    "deploy": "npm run build && aws s3 sync dist/ s3://rjwrenovations.co.uk --delete --profile gazzwi86 && aws cloudfront create-invalidation --distribution-id $CF_DIST_ID --paths '/*' --profile gazzwi86",
+    "format": "prettier --write src",
+    "test:ui": "playwright test",
+    "prepare": "npx simple-git-hooks"
   },
   "dependencies": {
     "react": "^19.2.6",
@@ -16,6 +19,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.52.0",
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -24,8 +28,20 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.5.3",
+    "simple-git-hooks": "^2.13.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.12"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "pre-push": "npm run build"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
