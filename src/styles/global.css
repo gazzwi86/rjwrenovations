@@ -38,7 +38,7 @@
 
   --gold:        #F5C842;
 
-  --nav-h:       72px;
+  --nav-h:       80px;
   --max-w:       1200px;
   --px:          clamp(20px, 4vw, 80px);
   --section-py:  clamp(64px, 8vw, 120px);

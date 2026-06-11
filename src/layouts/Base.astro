@@ -11,7 +11,7 @@ export interface Props {
 const {
   title = 'RJW Renovations | Kitchens, Bathrooms & Property Renovations in Henley-in-Arden',
   description = 'Which? Trusted Traders. Quality kitchens, bathrooms, plumbing & more across Warwickshire & the West Midlands. 5-star rated, 100% recommendation rate.',
-  ogImage = '/og/home.jpg',
+  ogImage = '/logo.png',
   ogType = 'website',
 } = Astro.props
 
@@ -103,8 +103,6 @@ const ldJson = JSON.stringify({
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.site)} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="RJW Renovations — quality property renovations in Warwickshire" />
     <meta property="og:site_name" content="RJW Renovations" />
     <meta property="og:locale" content="en_GB" />

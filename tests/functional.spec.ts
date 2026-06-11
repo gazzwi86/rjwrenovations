@@ -69,7 +69,7 @@ test.describe('Contact form', () => {
     await page.goto('/')
     const form = page.locator('form[aria-label="Contact RJW Renovations"]')
     const action = await form.getAttribute('action')
-    expect(action).toContain('formspree.io/f/xpwzgwke')
+    expect(action).toContain('formspree.io/f/xzdqagea')
   })
 })
 

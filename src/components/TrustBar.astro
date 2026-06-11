@@ -16,10 +16,10 @@
     <div class="trust-sep" aria-hidden="true"></div>
 
     <div class="trust-item" data-reveal data-delay="2">
-      <span class="trust-icon stars" aria-hidden="true">★★★★★</span>
+      <span class="trust-icon" aria-hidden="true">★</span>
       <div>
         <strong>5.0 / 5.0</strong>
-        <span>17 verified reviews</span>
+        <span class="trust-stars" aria-label="Five stars">★★★★★</span>
       </div>
     </div>
 
@@ -74,18 +74,19 @@
   }
   .trust-badge-link:hover { opacity: 0.8; }
   .trust-icon {
-    font-size: 22px;
+    font-size: 26px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     background: rgba(61,110,150,0.1);
     border: 1px solid rgba(61,110,150,0.2);
     border-radius: 10px;
+    overflow: hidden;
+    color: var(--gold);
   }
-  .trust-icon.stars { font-size: 14px; color: var(--gold); }
   .trust-item strong {
     display: block;
     font-size: 16px;
@@ -97,6 +98,11 @@
     display: block;
     font-size: 12px;
     color: var(--text-muted);
+  }
+  .trust-stars {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 1px;
   }
 
   @media (min-width: 640px) {
