@@ -101,18 +101,20 @@
 
   @media (min-width: 640px) {
     .trust-inner {
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .trust-item {
+      flex: 1;
+      justify-content: center;
     }
     .trust-sep {
       display: block;
+      flex-shrink: 0;
       width: 1px;
       height: 40px;
       background: var(--border-sub);
-      justify-self: center;
     }
-  }
-  @media (min-width: 768px) {
-    .trust-inner { gap: 0; }
-    .trust-sep { display: block; }
   }
 </style>
