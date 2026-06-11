@@ -174,59 +174,6 @@ function GalleryInner() {
         </div>
       )}
 
-      <style>{`
-        .gallery-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-        .filter-btn {
-          padding: 8px 18px; border-radius: 20px; border: 1px solid var(--border-sub);
-          background: transparent; color: var(--text-muted); font-size: 13px; font-weight: 500;
-          cursor: pointer; transition: all 0.15s; min-height: 44px;
-        }
-        .filter-btn:hover { border-color: var(--blue-text); color: var(--blue-text); }
-        .filter-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
-        .gallery-grid {
-          list-style: none; display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;
-        }
-        .gallery-item { border-radius: 10px; overflow: hidden; }
-        .gallery-btn {
-          display: block; width: 100%; background: none; border: none; cursor: pointer;
-          padding: 0; position: relative; overflow: hidden; border-radius: 10px;
-        }
-        .gallery-btn img {
-          display: block; width: 100%; aspect-ratio: 3/2; object-fit: cover; transition: transform 0.4s ease;
-        }
-        .gallery-btn:hover img { transform: scale(1.05); }
-        .gallery-overlay {
-          position: absolute; inset: 0; background: rgba(13,17,23,0.6);
-          display: flex; align-items: center; justify-content: center;
-          color: #fff; opacity: 0; transition: opacity 0.2s;
-        }
-        .gallery-btn:hover .gallery-overlay,
-        .gallery-btn:focus-visible .gallery-overlay { opacity: 1; }
-        .lightbox {
-          position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.92);
-          display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px);
-        }
-        .lb-close {
-          position: absolute; top: 16px; right: 16px;
-          background: rgba(255,255,255,0.1); border: none; color: #fff; cursor: pointer;
-          border-radius: 50%; width: 48px; height: 48px;
-          display: flex; align-items: center; justify-content: center; transition: background 0.15s;
-        }
-        .lb-close:hover { background: rgba(255,255,255,0.2); }
-        .lb-nav {
-          position: absolute; top: 50%; transform: translateY(-50%);
-          background: rgba(255,255,255,0.1); border: none; color: #fff; cursor: pointer;
-          border-radius: 50%; width: 52px; height: 52px;
-          display: flex; align-items: center; justify-content: center; transition: background 0.15s; z-index: 1;
-        }
-        .lb-nav:hover { background: rgba(255,255,255,0.2); }
-        .lb-prev { left: 16px; }
-        .lb-next { right: 16px; }
-        .lb-img-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-        .lb-img { max-width: 90vw; max-height: 85vh; object-fit: contain; }
-        .lb-caption { color: rgba(255,255,255,0.7); font-size: 14px; text-align: center; max-width: 600px; }
-      `}</style>
     </div>
   )
 }

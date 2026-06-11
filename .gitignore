@@ -12,6 +12,16 @@ dist
 dist-ssr
 *.local
 
+# Astro generated types
+.astro/
+
+# Playwright test output
+test-results/
+playwright-report/
+
+# Source logo files (originals, not deployed assets)
+RJW_*.png
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

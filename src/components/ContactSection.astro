@@ -1,5 +1,6 @@
 ---
 import ContactForm from './ContactForm.tsx'
+import { PHONE_E164, PHONE_DISPLAY, EMAIL } from '../config/contact'
 ---
 
 <section id="contact" class="contact section-py" aria-labelledby="contact-h2">
@@ -21,7 +22,7 @@ import ContactForm from './ContactForm.tsx'
             </div>
             <div>
               <span class="detail-label">Phone</span>
-              <a href="tel:+447896051540" class="detail-value detail-link" rel="nofollow">07896 051540</a>
+              <a href={`tel:${PHONE_E164}`} class="detail-value detail-link" rel="nofollow">{PHONE_DISPLAY}</a>
             </div>
           </li>
 
@@ -34,7 +35,7 @@ import ContactForm from './ContactForm.tsx'
             </div>
             <div>
               <span class="detail-label">Email</span>
-              <a href="mailto:rhys@rjwrenovations.co.uk" class="detail-value detail-link">rhys@rjwrenovations.co.uk</a>
+              <a href={`mailto:${EMAIL}`} class="detail-value detail-link" rel="nofollow">{EMAIL}</a>
             </div>
           </li>
 

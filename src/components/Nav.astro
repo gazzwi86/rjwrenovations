@@ -1,4 +1,5 @@
 ---
+import { PHONE_E164, PHONE_DISPLAY } from '../config/contact'
 ---
 <header id="site-header" role="banner">
   <nav class="nav" aria-label="Primary navigation">
@@ -16,9 +17,9 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="tel:+447896051540" class="nav-phone" rel="nofollow" aria-label="Call RJW Renovations on 07896 051540">
+        <a href={`tel:${PHONE_E164}`} class="nav-phone" rel="nofollow" aria-label={`Call RJW Renovations on ${PHONE_DISPLAY}`}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>07896 051540</span>
+          <span>{PHONE_DISPLAY}</span>
         </a>
         <a href="#contact" class="btn btn-primary nav-cta">Free Quote</a>
         <button class="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
@@ -40,9 +41,9 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
-      <a href="tel:+447896051540" class="drawer-phone" rel="nofollow" aria-label="Call RJW Renovations on 07896 051540">
+      <a href={`tel:${PHONE_E164}`} class="drawer-phone" rel="nofollow" aria-label={`Call RJW Renovations on ${PHONE_DISPLAY}`}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        07896 051540
+        {PHONE_DISPLAY}
       </a>
       <ul class="drawer-links" role="list">
         <li><a href="#services">Services</a></li>

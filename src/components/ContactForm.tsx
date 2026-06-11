@@ -98,7 +98,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate aria-label="Contact RJW Renovations">
+    <form onSubmit={handleSubmit} noValidate action={`https://formspree.io/f/${FORMSPREE_ID}`} method="POST" aria-label="Contact RJW Renovations">
       {status === 'error' && (
         <div className="form-error-banner" role="alert">
           Something went wrong — please try again or call us directly.

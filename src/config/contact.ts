@@ -1,0 +1,5 @@
+export const PHONE_E164 = '+447896051540'
+export const PHONE_DISPLAY = '07896 051540'
+export const EMAIL = 'rhys@rjwrenovations.co.uk'
+export const WA_URL_BARE = 'https://wa.me/447896051540'
+export const WA_URL = 'https://wa.me/447896051540?text=Hi%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20some%20work.'
