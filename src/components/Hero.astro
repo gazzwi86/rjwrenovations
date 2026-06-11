@@ -1,5 +1,4 @@
 ---
-import MeshCanvas from './MeshCanvas.tsx'
 import { Image } from 'astro:assets'
 import heroImg from '../assets/gallery/kitchen-1.jpg'
 import heroImg2 from '../assets/gallery/bathroom-1.jpg'
@@ -7,12 +6,6 @@ import { WA_URL_BARE } from '../config/contact'
 ---
 
 <section id="hero" class="hero" aria-labelledby="hero-h1">
-  <!-- Mesh canvas (React island) -->
-  <MeshCanvas client:idle />
-
-  <!-- Dark gradient overlay -->
-  <div class="hero-overlay" aria-hidden="true"></div>
-
   <div class="container hero-inner">
     <!-- Content -->
     <div class="hero-content" data-reveal>
@@ -87,15 +80,8 @@ import { WA_URL_BARE } from '../config/contact'
     overflow: hidden;
     background: var(--bg);
   }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(135deg, rgba(13,17,23,0.92) 0%, rgba(13,17,23,0.7) 50%, rgba(13,17,23,0.4) 100%);
-  }
   .hero-inner {
     position: relative;
-    z-index: 2;
     display: grid;
     grid-template-columns: 1fr;
     gap: 48px;
