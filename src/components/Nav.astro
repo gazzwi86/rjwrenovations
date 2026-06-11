@@ -1,0 +1,298 @@
+---
+// base64('+447896051540') base64('07896 051540')
+const encHref = 'KzQ0Nzg5NjA1MTU0MA=='
+const encDisplay = 'MDc4OTYgMDUxNTQw'
+---
+<header id="site-header" role="banner">
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav-inner container">
+      <a href="/" class="nav-logo" aria-label="RJW Renovations — home">
+        <img src="/logo.png" alt="RJW Renovations" width="140" height="40" />
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Our Work</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a id="nav-phone-link" href="#" class="nav-phone" rel="nofollow" aria-label="Call RJW Renovations">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span id="nav-phone-display">Call us</span>
+        </a>
+        <a href="#contact" class="btn btn-primary nav-cta">Free Quote</a>
+        <button class="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-menu" class="mobile-drawer" role="dialog" aria-label="Navigation menu" aria-modal="true" hidden>
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <a href="/" aria-label="RJW Renovations — home">
+          <img src="/logo.png" alt="RJW Renovations" width="120" height="40" />
+        </a>
+        <button class="drawer-close" aria-label="Close navigation menu" id="close-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <a id="drawer-phone-link" href="#" class="drawer-phone" rel="nofollow" aria-label="Call RJW Renovations">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span id="drawer-phone-display">Call us</span>
+      </a>
+      <ul class="drawer-links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Our Work</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary drawer-cta">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--nav-h);
+    transition: background 0.3s, box-shadow 0.3s;
+    background: transparent;
+  }
+  .nav.scrolled {
+    background: rgba(13,17,23,0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 var(--border-sub);
+  }
+  .nav-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .nav-logo img { display: block; height: 40px; width: auto; }
+  .nav-links {
+    display: none;
+    list-style: none;
+    gap: 28px;
+    align-items: center;
+    margin-left: auto;
+  }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+  }
+  .nav-phone {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .nav-phone:hover { color: var(--text); }
+  .nav-cta { padding: 9px 18px; font-size: 13px; }
+  .nav-burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 1px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile drawer */
+  .mobile-drawer[hidden] { display: none; }
+  .mobile-drawer { position: fixed; inset: 0; z-index: 200; }
+  .drawer-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(4px);
+  }
+  .drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 100vw);
+    background: var(--surface-1);
+    border-left: 1px solid var(--border-sub);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+  }
+  .drawer-header { display: flex; align-items: center; justify-content: space-between; }
+  .drawer-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  .drawer-close:hover { background: var(--surface-2); color: var(--text); }
+  .drawer-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    background: var(--surface-2);
+    border-radius: 10px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid var(--border-sub);
+    transition: border-color 0.15s;
+  }
+  .drawer-phone:hover { border-color: var(--red); }
+  .drawer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+  .drawer-links a {
+    display: block;
+    padding: 12px 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-sub);
+    transition: color 0.15s;
+  }
+  .drawer-links a:hover { color: var(--blue-accent); }
+  .drawer-cta { width: 100%; justify-content: center; }
+
+  @media (min-width: 768px) {
+    .nav-links { display: flex; }
+    .nav-phone { display: flex; }
+    .nav-burger { display: none; }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header')
+  const nav = header?.querySelector('.nav')
+  const burgerBtn = document.getElementById('burger-btn')
+  const closeBtn = document.getElementById('close-btn')
+  const mobileMenu = document.getElementById('mobile-menu')
+  const backdrop = document.getElementById('drawer-backdrop')
+
+  // Scroll handling
+  const sentinel = document.createElement('div')
+  sentinel.style.cssText = 'position:absolute;top:var(--nav-h);pointer-events:none;'
+  document.body.prepend(sentinel)
+  new IntersectionObserver(([e]) => nav?.classList.toggle('scrolled', !e.isIntersecting)).observe(sentinel)
+
+  // Mobile menu
+  function openMenu() {
+    mobileMenu?.removeAttribute('hidden')
+    burgerBtn?.setAttribute('aria-expanded', 'true')
+    const firstLink = mobileMenu?.querySelector('a, button') as HTMLElement | null
+    firstLink?.focus()
+    document.body.style.overflow = 'hidden'
+  }
+  function closeMenu() {
+    mobileMenu?.setAttribute('hidden', '')
+    burgerBtn?.setAttribute('aria-expanded', 'false')
+    burgerBtn?.focus()
+    document.body.style.overflow = ''
+  }
+
+  burgerBtn?.addEventListener('click', openMenu)
+  closeBtn?.addEventListener('click', closeMenu)
+  backdrop?.addEventListener('click', closeMenu)
+  mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu))
+
+  document.addEventListener('keydown', (e) => {
+    if (!mobileMenu || mobileMenu.hasAttribute('hidden')) return
+    if (e.key === 'Escape') { closeMenu(); return }
+    // Focus trap
+    if (e.key === 'Tab') {
+      const focusable = Array.from(mobileMenu.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
+      ))
+      if (!focusable.length) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+  })
+
+  // Decode obfuscated phone
+  try {
+    const href = atob('KzQ0Nzg5NjA1MTU0MA==')
+    const display = atob('MDc4OTYgMDUxNTQw')
+    const navLink = document.getElementById('nav-phone-link') as HTMLAnchorElement | null
+    const navDisplay = document.getElementById('nav-phone-display')
+    const drawerLink = document.getElementById('drawer-phone-link') as HTMLAnchorElement | null
+    const drawerDisplay = document.getElementById('drawer-phone-display')
+    if (navLink && navDisplay) {
+      navLink.href = `tel:${href}`
+      navLink.setAttribute('aria-label', `Call RJW Renovations on ${display}`)
+      navDisplay.textContent = display
+    }
+    if (drawerLink && drawerDisplay) {
+      drawerLink.href = `tel:${href}`
+      drawerLink.setAttribute('aria-label', `Call RJW Renovations on ${display}`)
+      drawerDisplay.textContent = display
+    }
+  } catch (e) { /* silently skip */ }
+</script>

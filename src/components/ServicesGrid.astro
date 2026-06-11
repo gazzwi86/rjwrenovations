@@ -1,0 +1,150 @@
+---
+const services = [
+  {
+    id: 'kitchens',
+    name: 'Kitchens',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    desc: 'Full kitchen design and installation — from layout planning and cabinetry to worktops and final finishes, delivered to a standard you\'ll still be proud of in ten years.',
+  },
+  {
+    id: 'bathrooms',
+    name: 'Bathrooms',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-3a1 1 0 0 1 1-1z"/><path d="M6 12V5a2 2 0 0 1 2-2h3v2.25"/></svg>`,
+    desc: 'Complete bathroom transformations handled from first fix to final tile, with attention to detail that makes the difference between adequate and exceptional.',
+  },
+  {
+    id: 'wet-rooms',
+    name: 'Wet Rooms',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
+    desc: 'Sleek, fully waterproofed wet room installations designed for modern aesthetics and long-term structural integrity.',
+  },
+  {
+    id: 'accessible',
+    name: 'Accessible Bathrooms',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`,
+    desc: 'Sensitive, practical bathroom adaptations — level-access showers, grab-rail fitting — prioritising dignity, safety, and quality of life without compromising on style.',
+  },
+  {
+    id: 'plumbing',
+    name: 'Plumbing',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    desc: 'Reliable plumbing for planned works and urgent call-outs alike, with fast response times when something can\'t wait.',
+  },
+  {
+    id: 'heating',
+    name: 'Boiler & Heating',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2v5.5a3.5 3.5 0 1 0 6 0V2"/><path d="M6.5 8a5.5 5.5 0 0 0 11 0"/><path d="M12 13v4"/><path d="M8 21h8"/></svg>`,
+    desc: 'Boiler installations, replacements, and heating system upgrades carried out safely and efficiently to keep your home warm.',
+  },
+  {
+    id: 'media-walls',
+    name: 'Media Walls',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>`,
+    desc: 'Custom-built media walls combining clean design with practical functionality — the right way to make a feature of your living space.',
+  },
+  {
+    id: 'decking',
+    name: 'Decking',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>`,
+    desc: 'Professionally built timber or composite decking that extends your living space outdoors and holds up to the British weather.',
+  },
+  {
+    id: 'garage-conversions',
+    name: 'Garage Conversions',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>`,
+    desc: 'Transform an underused garage into a room that earns its square footage — home office, gym, playroom, or extra living space.',
+  },
+  {
+    id: 'fencing',
+    name: 'Fencing',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 3v18M4 7h16M20 3v18M12 3v4M12 9v12M8 7v2M16 7v2"/></svg>`,
+    desc: 'Solid, well-finished fencing installation and replacement for privacy, security, and a garden that looks as good as the inside of your home.',
+  },
+]
+---
+
+<section id="services" class="services section-py" aria-labelledby="services-h2">
+  <div class="container">
+    <header class="section-header" data-reveal>
+      <span class="eyebrow">What We Do</span>
+      <h2 id="services-h2">Services That Cover<br />Your Whole Home</h2>
+      <p>From a leaking pipe to a full kitchen refit — Rhys and Alex handle it all with the same high standard and honest pricing.</p>
+    </header>
+
+    <ul class="services-grid" role="list">
+      {services.map((s, i) => (
+        <li class="service-card" data-reveal data-delay={String((i % 4) + 1)}>
+          <div class="card-icon" set:html={s.icon} />
+          <h3>{s.name}</h3>
+          <p>{s.desc}</p>
+          <a href="#contact" class="card-cta" aria-label={`Get a quote for ${s.name}`}>
+            Get a quote
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .services { background: var(--surface-1); }
+  .services-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--surface-3);
+    border: 1px solid var(--border-sub);
+    border-radius: 12px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+  }
+  .service-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  }
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(61,110,150,0.12);
+    border: 1px solid rgba(61,110,150,0.2);
+    border-radius: 12px;
+    color: var(--blue-text);
+    flex-shrink: 0;
+  }
+  .service-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--red-text);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 4px;
+    transition: gap 0.15s, color 0.15s;
+    min-height: 44px;
+  }
+  .card-cta:hover { gap: 10px; color: var(--red-hover); }
+</style>

@@ -1,0 +1,148 @@
+---
+const stats = [
+  { value: '250+', label: 'Projects completed', suffix: '' },
+  { value: '17', label: 'Verified 5-star reviews', suffix: '' },
+  { value: '100%', label: 'Recommendation rate', suffix: '' },
+  { value: '6', label: 'Years in the trade', suffix: '+' },
+]
+
+const usps = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    title: 'Which? Trusted Traders',
+    desc: 'Independently vetted and accredited — not just a sticker on a van. Every job is backed by our verified trading history.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>`,
+    title: 'On Time, Every Time',
+    desc: 'We show up when we say we will, finish when we say we will, and keep you informed every step of the way.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>`,
+    title: 'Fixed-Price Quotes',
+    desc: 'No nasty surprises. Your quote is what you pay — we handle scope changes transparently before they happen.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    title: 'A Small Team You Can Trust',
+    desc: "It's Rhys and Alex on every job — not a rotating crew of subcontractors. You know who's in your home.",
+  },
+]
+---
+
+<section id="why-us" class="usp-section section-py" aria-labelledby="usp-h2">
+  <div class="container">
+    <header class="section-header" data-reveal>
+      <span class="eyebrow">Why Choose RJW</span>
+      <h2 id="usp-h2">The Right Team<br />for Your Home</h2>
+      <p>Honest pricing, skilled hands, and a reputation that speaks for itself.</p>
+    </header>
+
+    <!-- Stats strip -->
+    <dl class="stats-strip" aria-label="Key statistics">
+      {stats.map((s, i) => (
+        <div class="stat-item" data-reveal data-delay={String(i + 1)}>
+          <dt class="sr-only">{s.label}</dt>
+          <dd class="stat-number" data-count={s.value}>{s.value}</dd>
+          <span class="stat-label">{s.label}</span>
+        </div>
+      ))}
+    </dl>
+
+    <!-- USP grid -->
+    <ul class="usp-grid" role="list">
+      {usps.map((u, i) => (
+        <li class="usp-card" data-reveal data-delay={String(i + 1)}>
+          <div class="usp-icon" set:html={u.icon} />
+          <div>
+            <h3>{u.title}</h3>
+            <p>{u.desc}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .usp-section { background: var(--bg); }
+
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--border-sub);
+    border: 1px solid var(--border-sub);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 64px;
+  }
+  @media (min-width: 640px) { .stats-strip { grid-template-columns: repeat(4, 1fr); } }
+
+  .stat-item {
+    background: var(--surface-1);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+  .stat-number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--red-text);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.3;
+  }
+
+  .usp-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 640px) { .usp-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .usp-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 28px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-sub);
+    border-radius: 14px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .usp-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+
+  .usp-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(61,110,150,0.12);
+    border: 1px solid rgba(61,110,150,0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-text);
+  }
+
+  .usp-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .usp-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro'
+import Nav from '../components/Nav.astro'
+import Hero from '../components/Hero.astro'
+import TrustBar from '../components/TrustBar.astro'
+import ServicesGrid from '../components/ServicesGrid.astro'
+import USPSection from '../components/USPSection.astro'
+import Gallery from '../components/Gallery.tsx'
+
+import Testimonials from '../components/Testimonials.astro'
+import About from '../components/About.astro'
+import ServiceAreas from '../components/ServiceAreas.astro'
+import ContactSection from '../components/ContactSection.astro'
+import Footer from '../components/Footer.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+import StickyBar from '../components/StickyBar.astro'
+---
+
+<Base>
+  <Nav />
+
+  <main id="main" tabindex="-1">
+    <Hero />
+    <TrustBar />
+    <ServicesGrid />
+    <USPSection />
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery-section section-py" aria-labelledby="gallery-h2">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <span class="eyebrow">Our Work</span>
+          <h2 id="gallery-h2">Recent Projects</h2>
+          <p>A selection of completed kitchens, bathrooms, wet rooms, and more — every one delivered to the same high standard.</p>
+        </header>
+        <Gallery client:visible />
+      </div>
+    </section>
+
+    <Testimonials />
+    <About />
+    <ServiceAreas />
+    <ContactSection />
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+  <StickyBar />
+</Base>
+
+<style>
+  .gallery-section { background: var(--surface-1); }
+</style>

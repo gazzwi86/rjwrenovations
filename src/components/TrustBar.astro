@@ -1,0 +1,118 @@
+---
+---
+<section class="trust-bar" aria-label="Trust signals and accreditations">
+  <div class="container trust-inner">
+    <div class="trust-item" data-reveal data-delay="1">
+      <a href="https://trustedtraders.which.co.uk/businesses/rjw-renovations/" rel="noopener noreferrer" target="_blank" class="trust-badge-link" aria-label="View RJW Renovations on Which? Trusted Traders (opens in new tab)">
+        <span class="trust-icon" aria-hidden="true">✓</span>
+        <div>
+          <strong>Which? Trusted Traders</strong>
+          <span>Independently accredited</span>
+        </div>
+        <span class="sr-only">(opens in new tab)</span>
+      </a>
+    </div>
+
+    <div class="trust-sep" aria-hidden="true"></div>
+
+    <div class="trust-item" data-reveal data-delay="2">
+      <span class="trust-icon stars" aria-hidden="true">★★★★★</span>
+      <div>
+        <strong>5.0 / 5.0</strong>
+        <span>17 verified reviews</span>
+      </div>
+    </div>
+
+    <div class="trust-sep" aria-hidden="true"></div>
+
+    <div class="trust-item" data-reveal data-delay="3">
+      <span class="trust-icon" aria-hidden="true">💯</span>
+      <div>
+        <strong>100%</strong>
+        <span>Recommendation rate</span>
+      </div>
+    </div>
+
+    <div class="trust-sep" aria-hidden="true"></div>
+
+    <div class="trust-item" data-reveal data-delay="4">
+      <span class="trust-icon" aria-hidden="true">🏗️</span>
+      <div>
+        <strong>Est. 2018</strong>
+        <span>6+ years trusted locally</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-bar {
+    background: var(--surface-1);
+    border-top: 1px solid var(--border-sub);
+    border-bottom: 1px solid var(--border-sub);
+    padding: 28px 0;
+  }
+  .trust-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+    align-items: center;
+  }
+  .trust-sep { display: none; }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .trust-badge-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.15s;
+  }
+  .trust-badge-link:hover { opacity: 0.8; }
+  .trust-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(61,110,150,0.1);
+    border: 1px solid rgba(61,110,150,0.2);
+    border-radius: 10px;
+  }
+  .trust-icon.stars { font-size: 14px; color: var(--gold); }
+  .trust-item strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .trust-item span {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  @media (min-width: 640px) {
+    .trust-inner {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .trust-sep {
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: var(--border-sub);
+      justify-self: center;
+    }
+  }
+  @media (min-width: 768px) {
+    .trust-inner { gap: 0; }
+    .trust-sep { display: block; }
+  }
+</style>

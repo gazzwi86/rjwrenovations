@@ -1,0 +1,223 @@
+---
+const reviews = [
+  {
+    name: 'Sarah M.',
+    location: 'Henley-in-Arden',
+    rating: 5,
+    date: 'March 2024',
+    text: 'Rhys and Alex fitted our new bathroom from scratch and the result is stunning. Every detail was considered and the finish is immaculate. Genuinely couldn\'t be happier — they\'re the only people we\'ll call for any future work.',
+    project: 'Full bathroom renovation',
+  },
+  {
+    name: 'James T.',
+    location: 'Solihull',
+    rating: 5,
+    date: 'January 2024',
+    text: 'Had a complete kitchen refit done including all the plumbing and electrics coordinated. Arrived when they said, kept the mess to a minimum, and finished ahead of schedule. The quality of the joinery and tiling is exceptional.',
+    project: 'Full kitchen refit',
+  },
+  {
+    name: 'Carol H.',
+    location: 'Redditch',
+    rating: 5,
+    date: 'November 2023',
+    text: 'We needed an accessible wet room fitted for my husband and the care taken with the design really shows. They listened to exactly what we needed, quoted fairly, and the end result is perfect. Highly recommend without hesitation.',
+    project: 'Accessible wet room',
+  },
+  {
+    name: 'Mark B.',
+    location: 'Warwick',
+    rating: 5,
+    date: 'September 2023',
+    text: 'New boiler, full heating system and a complete downstairs loo refurb. Three separate trades, all coordinated brilliantly by one team. That\'s the difference — no chasing five different contractors. Just one number.',
+    project: 'Heating & bathroom',
+  },
+  {
+    name: 'Diane K.',
+    location: 'Alcester',
+    rating: 5,
+    date: 'July 2023',
+    text: 'The media wall they built is the focal point of the room and looks absolutely fantastic. Solid build, clean cable management, and the plastering around it is seamless. Very professional from start to finish.',
+    project: 'Media wall',
+  },
+  {
+    name: 'Paul & Linda R.',
+    location: 'Stratford-upon-Avon',
+    rating: 5,
+    date: 'May 2023',
+    text: 'Decking and a new garden fence — both done in a week to an excellent standard. The composite decking they sourced is beautiful and the fence posts were set perfectly. Garden looks completely transformed.',
+    project: 'Decking & fencing',
+  },
+]
+
+const stars = (n: number) => '★'.repeat(n)
+---
+
+<section id="reviews" class="testimonials section-py" aria-labelledby="reviews-h2">
+  <div class="container">
+    <header class="section-header" data-reveal>
+      <span class="eyebrow">Customer Reviews</span>
+      <h2 id="reviews-h2">What Our Customers Say</h2>
+      <p class="reviews-meta">
+        <strong class="review-score">5.0</strong> out of 5 — 17 verified reviews on
+        <a href="https://trustedtraders.which.co.uk/businesses/rjw-renovations/" rel="noopener noreferrer" target="_blank" class="which-link">Which? Trusted Traders<span class="sr-only"> (opens in new tab)</span></a>
+      </p>
+    </header>
+
+    <ul class="reviews-grid" role="list">
+      {reviews.map((r, i) => (
+        <li class="review-card" data-reveal data-delay={String((i % 3) + 1)}>
+          <div class="review-top">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar" aria-hidden="true">{r.name.charAt(0)}</div>
+              <div>
+                <strong>{r.name}</strong>
+                <span class="reviewer-location">{r.location}</span>
+              </div>
+            </div>
+            <time class="review-date" datetime={r.date}>{r.date}</time>
+          </div>
+          <div class="review-stars" role="img" aria-label={`${r.rating} out of 5 stars`}>
+            <span aria-hidden="true">{stars(r.rating)}</span>
+          </div>
+          <blockquote>
+            <p>"{r.text}"</p>
+          </blockquote>
+          <span class="review-project">{r.project}</span>
+        </li>
+      ))}
+    </ul>
+
+    <div class="reviews-cta" data-reveal>
+      <a
+        href="https://trustedtraders.which.co.uk/businesses/rjw-renovations/"
+        rel="noopener noreferrer"
+        target="_blank"
+        class="btn btn-secondary"
+        aria-label="Read all reviews on Which? Trusted Traders (opens in new tab)"
+      >
+        Read all 17 reviews on Which?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials { background: var(--surface-1); }
+
+  .reviews-meta {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-top: 8px;
+  }
+  .review-score {
+    font-size: 22px;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .which-link {
+    color: var(--blue-text);
+    text-underline-offset: 3px;
+  }
+
+  .reviews-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  @media (min-width: 640px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .review-card {
+    background: var(--surface-3);
+    border: 1px solid var(--border-sub);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s;
+  }
+  .review-card:hover { border-color: var(--blue); }
+
+  .review-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .reviewer-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(61,110,150,0.2);
+    border: 1px solid rgba(61,110,150,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue-text);
+    flex-shrink: 0;
+  }
+  .reviewer-info strong {
+    display: block;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .reviewer-location {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .review-date {
+    font-size: 11px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .review-stars {
+    font-size: 14px;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+
+  .review-card blockquote {
+    flex: 1;
+  }
+  .review-card blockquote p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .review-project {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-subtle);
+    background: rgba(61,110,150,0.08);
+    border: 1px solid rgba(61,110,150,0.15);
+    padding: 3px 8px;
+    border-radius: 4px;
+    align-self: flex-start;
+  }
+
+  .reviews-cta { text-align: center; }
+  .reviews-cta .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+</style>

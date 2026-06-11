@@ -1,0 +1,83 @@
+---
+const areas = [
+  'Henley-in-Arden', 'Solihull', 'Birmingham', 'Walsall', 'Coventry',
+  'Rugby', 'Leamington Spa', 'Warwick', 'Kenilworth', 'Stratford-upon-Avon',
+  'Redditch', 'Bromsgrove', 'Alcester', 'Studley', 'Bidford-on-Avon',
+]
+---
+
+<section id="areas" class="areas section-py" aria-labelledby="areas-h2">
+  <div class="container">
+    <div class="areas-inner">
+      <div class="areas-text" data-reveal>
+        <span class="eyebrow">Coverage</span>
+        <h2 id="areas-h2">Serving Henley-in-Arden,<br />Warwickshire & Beyond</h2>
+        <p>
+          Based in Henley-in-Arden, Rhys and Alex cover a wide radius across Warwickshire, Solihull, and the wider West Midlands. Not sure if you're in the area? Just get in touch — we'll let you know.
+        </p>
+        <a href="#contact" class="btn btn-primary">Check Your Area</a>
+      </div>
+
+      <div class="areas-pills-wrap" data-reveal data-delay="2">
+        <ul class="areas-pills" role="list" aria-label="Service areas covered">
+          {areas.map(a => (
+            <li class="area-pill">{a}</li>
+          ))}
+        </ul>
+        <p class="areas-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Can't see your town? We may still cover it — just ask.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .areas { background: var(--surface-1); }
+
+  .areas-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .areas-inner { grid-template-columns: 1fr 1fr; gap: 64px; }
+  }
+
+  .areas-text { display: flex; flex-direction: column; gap: 16px; }
+  .areas-text p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+
+  .areas-pills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .area-pill {
+    padding: 8px 14px;
+    background: var(--surface-3);
+    border: 1px solid var(--border-sub);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    cursor: default;
+  }
+  .area-pill:hover {
+    border-color: var(--blue);
+    color: var(--blue-text);
+    background: rgba(61,110,150,0.08);
+  }
+
+  .areas-note {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-subtle);
+  }
+</style>
