@@ -174,13 +174,16 @@ body {
 }
 .btn-secondary:hover { border-color: var(--blue-accent); color: var(--blue-accent); }
 
-/* Scroll reveal */
+/* Scroll reveal — progressive enhancement only.
+   Content is visible by default; .js class (added synchronously) opts into animation. */
 [data-reveal] {
-  opacity: 0;
-  transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-[data-reveal].is-visible {
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.js [data-reveal].is-visible {
   opacity: 1;
   transform: none;
 }

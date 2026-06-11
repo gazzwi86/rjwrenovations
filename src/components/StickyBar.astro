@@ -1,8 +1,4 @@
 ---
-// Encoded: btoa('07896 051540') = 'MDc4OTYgMDUxNTQw'
-const encodedDisplay = 'MDc4OTYgMDUxNTQw'
-// Encoded: btoa('+447896051540') = 'KzQ0Nzg5NjA1MTU0MA=='
-const encodedHref = 'KzQ0Nzg5NjA1MTU0MA=='
 ---
 
 <div
@@ -12,11 +8,11 @@ const encodedHref = 'KzQ0Nzg5NjA1MTU0MA=='
   aria-label="Quick contact"
   data-hidden="true"
 >
-  <a id="sticky-call" href="#" class="sticky-cta sticky-call" rel="nofollow" aria-label="Call RJW Renovations">
+  <a href="tel:+447896051540" class="sticky-cta sticky-call" rel="nofollow" aria-label="Call RJW Renovations on 07896 051540">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.62 4.53 2 2 0 0 1 3.62 2.35h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.98 17v-.08z"/>
     </svg>
-    <span id="sticky-phone">Call us</span>
+    07896 051540
   </a>
   <a href="#contact" class="sticky-cta sticky-quote">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -24,29 +20,12 @@ const encodedHref = 'KzQ0Nzg5NjA1MTU0MA=='
   </a>
 </div>
 
-<script define:vars={{ encodedDisplay, encodedHref }}>
-  try {
-    const display = atob(encodedDisplay)
-    const href = atob(encodedHref)
-    const link = document.getElementById('sticky-call')
-    const span = document.getElementById('sticky-phone')
-    if (link && span) {
-      link.href = `tel:${href}`
-      span.textContent = display
-      link.setAttribute('aria-label', `Call RJW Renovations on ${display}`)
-    }
-  } catch (e) { /* silently skip */ }
-
-  // Show after user scrolls 200px
+<script>
   const bar = document.getElementById('sticky-bar')
   if (bar) {
     let ticking = false
     function checkScroll() {
-      if (window.scrollY > 200) {
-        bar.dataset.hidden = 'false'
-      } else {
-        bar.dataset.hidden = 'true'
-      }
+      bar!.dataset.hidden = window.scrollY > 200 ? 'false' : 'true'
     }
     window.addEventListener('scroll', () => {
       if (!ticking) {

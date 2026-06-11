@@ -1,13 +1,10 @@
 ---
-// base64('+447896051540') base64('07896 051540')
-const encHref = 'KzQ0Nzg5NjA1MTU0MA=='
-const encDisplay = 'MDc4OTYgMDUxNTQw'
 ---
 <header id="site-header" role="banner">
   <nav class="nav" aria-label="Primary navigation">
     <div class="nav-inner container">
       <a href="/" class="nav-logo" aria-label="RJW Renovations — home">
-        <img src="/logo.png" alt="RJW Renovations" width="140" height="40" />
+        <img src="/logo.png" alt="RJW Renovations" width="91" height="40" />
       </a>
 
       <ul class="nav-links" role="list">
@@ -19,9 +16,9 @@ const encDisplay = 'MDc4OTYgMDUxNTQw'
       </ul>
 
       <div class="nav-actions">
-        <a id="nav-phone-link" href="#" class="nav-phone" rel="nofollow" aria-label="Call RJW Renovations">
+        <a href="tel:+447896051540" class="nav-phone" rel="nofollow" aria-label="Call RJW Renovations on 07896 051540">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span id="nav-phone-display">Call us</span>
+          <span>07896 051540</span>
         </a>
         <a href="#contact" class="btn btn-primary nav-cta">Free Quote</a>
         <button class="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
@@ -37,15 +34,15 @@ const encDisplay = 'MDc4OTYgMDUxNTQw'
     <div class="drawer-panel">
       <div class="drawer-header">
         <a href="/" aria-label="RJW Renovations — home">
-          <img src="/logo.png" alt="RJW Renovations" width="120" height="40" />
+          <img src="/logo.png" alt="RJW Renovations" width="91" height="40" />
         </a>
         <button class="drawer-close" aria-label="Close navigation menu" id="close-btn">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
-      <a id="drawer-phone-link" href="#" class="drawer-phone" rel="nofollow" aria-label="Call RJW Renovations">
+      <a href="tel:+447896051540" class="drawer-phone" rel="nofollow" aria-label="Call RJW Renovations on 07896 051540">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span id="drawer-phone-display">Call us</span>
+        07896 051540
       </a>
       <ul class="drawer-links" role="list">
         <li><a href="#services">Services</a></li>
@@ -258,7 +255,6 @@ const encDisplay = 'MDc4OTYgMDUxNTQw'
   document.addEventListener('keydown', (e) => {
     if (!mobileMenu || mobileMenu.hasAttribute('hidden')) return
     if (e.key === 'Escape') { closeMenu(); return }
-    // Focus trap
     if (e.key === 'Tab') {
       const focusable = Array.from(mobileMenu.querySelectorAll<HTMLElement>(
         'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
@@ -275,24 +271,4 @@ const encDisplay = 'MDc4OTYgMDUxNTQw'
       }
     }
   })
-
-  // Decode obfuscated phone
-  try {
-    const href = atob('KzQ0Nzg5NjA1MTU0MA==')
-    const display = atob('MDc4OTYgMDUxNTQw')
-    const navLink = document.getElementById('nav-phone-link') as HTMLAnchorElement | null
-    const navDisplay = document.getElementById('nav-phone-display')
-    const drawerLink = document.getElementById('drawer-phone-link') as HTMLAnchorElement | null
-    const drawerDisplay = document.getElementById('drawer-phone-display')
-    if (navLink && navDisplay) {
-      navLink.href = `tel:${href}`
-      navLink.setAttribute('aria-label', `Call RJW Renovations on ${display}`)
-      navDisplay.textContent = display
-    }
-    if (drawerLink && drawerDisplay) {
-      drawerLink.href = `tel:${href}`
-      drawerLink.setAttribute('aria-label', `Call RJW Renovations on ${display}`)
-      drawerDisplay.textContent = display
-    }
-  } catch (e) { /* silently skip */ }
 </script>

@@ -1,6 +1,5 @@
 ---
 import ContactForm from './ContactForm.tsx'
-import ObfuscatedContact from './ObfuscatedContact.tsx'
 ---
 
 <section id="contact" class="contact section-py" aria-labelledby="contact-h2">
@@ -22,7 +21,7 @@ import ObfuscatedContact from './ObfuscatedContact.tsx'
             </div>
             <div>
               <span class="detail-label">Phone</span>
-              <ObfuscatedContact type="phone" client:idle linkClass="detail-value detail-link" />
+              <a href="tel:+447896051540" class="detail-value detail-link" rel="nofollow">07896 051540</a>
             </div>
           </li>
 
@@ -35,7 +34,7 @@ import ObfuscatedContact from './ObfuscatedContact.tsx'
             </div>
             <div>
               <span class="detail-label">Email</span>
-              <ObfuscatedContact type="email" client:idle linkClass="detail-value detail-link" />
+              <a href="mailto:rhys@rjwrenovations.co.uk" class="detail-value detail-link">rhys@rjwrenovations.co.uk</a>
             </div>
           </li>
 
