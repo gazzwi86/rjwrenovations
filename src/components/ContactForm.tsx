@@ -212,7 +212,15 @@ export default function ContactForm() {
         .form-input.has-error { border-color: var(--red); }
         .form-input.has-error:focus { box-shadow: 0 0 0 3px rgba(204,34,41,0.25); }
         textarea.form-input { resize: vertical; min-height: 120px; }
-        select.form-input { cursor: pointer; }
+        select.form-input {
+          cursor: pointer;
+          -webkit-appearance: none;
+          appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239DA7B3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 12px center;
+          padding-right: 36px;
+        }
         .field-error { font-size: 12px; color: var(--red-text); }
         .form-error-banner {
           background: rgba(204,34,41,0.1);
