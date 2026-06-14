@@ -10,18 +10,14 @@ interface GalleryItem {
 }
 
 const ITEMS: GalleryItem[] = [
-  { src: '/gallery/kitchen-1.jpg', alt: 'Modern fitted kitchen with island and quartz worktops', category: 'kitchens', width: 1200, height: 800 },
-  { src: '/gallery/kitchen-2.jpg', alt: 'Open plan kitchen renovation with navy shaker units', category: 'kitchens', width: 1200, height: 800 },
-  { src: '/gallery/kitchen-3.jpg', alt: 'Kitchen worktop and splashback installation', category: 'kitchens', width: 1200, height: 800 },
-  { src: '/gallery/bathroom-1.jpg', alt: 'Luxury bathroom with walk-in shower and freestanding bath', category: 'bathrooms', width: 1200, height: 800 },
-  { src: '/gallery/bathroom-2.jpg', alt: 'Contemporary bathroom with tiled feature wall', category: 'bathrooms', width: 1200, height: 800 },
-  { src: '/gallery/bathroom-3.jpg', alt: 'Ensuite bathroom renovation with heated towel rail', category: 'bathrooms', width: 1200, height: 800 },
-  { src: '/gallery/wetroom-1.jpg', alt: 'Fully tiled wet room with linear drain', category: 'wet-rooms', width: 1200, height: 800 },
-  { src: '/gallery/decking-1.jpg', alt: 'Composite garden decking with built-in lighting', category: 'decking', width: 1200, height: 800 },
-  { src: '/gallery/mediawall-1.jpg', alt: 'Custom built media wall with shelving and TV recess', category: 'other', width: 1200, height: 800 },
-  { src: '/gallery/garage-1.jpg', alt: 'Garage converted to home office with natural light', category: 'other', width: 1200, height: 800 },
-  { src: '/gallery/tiling-1.jpg', alt: 'Precision floor tiling in herringbone pattern', category: 'other', width: 1200, height: 800 },
-  { src: '/gallery/fencing-1.jpg', alt: 'Freshly installed timber fence panels', category: 'other', width: 1200, height: 800 },
+  { src: '/gallery/kitchen-navy-shaker.jpg', alt: 'Navy shaker kitchen with marble-effect quartz worktops and matt black extractor', category: 'kitchens', width: 1080, height: 1440 },
+  { src: '/gallery/bathroom-green-tiles.jpg', alt: 'Bathroom with emerald metro tiles, freestanding bath, brass fittings and patterned floor', category: 'bathrooms', width: 1080, height: 1440 },
+  { src: '/gallery/bathroom-navy.jpg', alt: 'Family bathroom with corner bath, navy vanity units and chrome heated towel rail', category: 'bathrooms', width: 1080, height: 1440 },
+  { src: '/gallery/bathroom-crittall-screen.jpg', alt: 'White-tiled bathroom with over-bath shower and black crittall-style glass screen', category: 'bathrooms', width: 1080, height: 1440 },
+  { src: '/gallery/cloakroom-oak-slat.jpg', alt: 'Downstairs cloakroom with oak slat feature wall, round mirror and herringbone floor', category: 'bathrooms', width: 1080, height: 1440 },
+  { src: '/gallery/wetroom-walk-in-shower.jpg', alt: 'Walk-in shower room with glass screen, grey vanity unit and wood-effect flooring', category: 'wet-rooms', width: 1080, height: 1440 },
+  { src: '/gallery/bedroom-barn-door.jpg', alt: 'Bedroom with oak sliding barn door, herringbone flooring and ensuite beyond', category: 'other', width: 1080, height: 1440 },
+  { src: '/gallery/garden-store.jpg', alt: 'Bespoke timber garden store with apex roof built from pressure-treated cladding', category: 'other', width: 1080, height: 1440 },
 ]
 
 const FILTERS = [
@@ -29,7 +25,6 @@ const FILTERS = [
   { id: 'kitchens', label: 'Kitchens' },
   { id: 'bathrooms', label: 'Bathrooms' },
   { id: 'wet-rooms', label: 'Wet Rooms' },
-  { id: 'decking', label: 'Decking' },
   { id: 'other', label: 'Other' },
 ]
 
