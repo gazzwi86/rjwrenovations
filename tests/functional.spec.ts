@@ -6,27 +6,27 @@ test.describe('Gallery filters', () => {
     // Wait for gallery to hydrate
     await page.waitForSelector('.gallery-filters', { timeout: 10000 })
 
-    // Initially "All Projects" active — all 8 items visible
+    // Initially "All Projects" active — all 12 items visible
     const allCount = await page.locator('.gallery-item').count()
-    expect(allCount).toBe(8)
+    expect(allCount).toBe(12)
 
     // Click "Kitchens"
     await page.click('button.filter-btn:has-text("Kitchens")')
     await page.waitForTimeout(300)
     const kitchenCount = await page.locator('.gallery-item').count()
-    expect(kitchenCount).toBe(1)
+    expect(kitchenCount).toBe(3)
 
     // Click "Bathrooms"
     await page.click('button.filter-btn:has-text("Bathrooms")')
     await page.waitForTimeout(300)
     const bathroomCount = await page.locator('.gallery-item').count()
-    expect(bathroomCount).toBe(4)
+    expect(bathroomCount).toBe(5)
 
-    // Click "All Projects" — back to 8
+    // Click "All Projects" — back to 12
     await page.click('button.filter-btn:has-text("All Projects")')
     await page.waitForTimeout(300)
     const backToAll = await page.locator('.gallery-item').count()
-    expect(backToAll).toBe(8)
+    expect(backToAll).toBe(12)
   })
 })
 
