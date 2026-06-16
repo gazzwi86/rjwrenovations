@@ -20,7 +20,7 @@ test.describe('Gallery filters', () => {
     await page.click('button.filter-btn:has-text("Bathrooms")')
     await page.waitForTimeout(300)
     const bathroomCount = await page.locator('.gallery-item').count()
-    expect(bathroomCount).toBe(5)
+    expect(bathroomCount).toBe(6)
 
     // Click "All Projects" — back to 12
     await page.click('button.filter-btn:has-text("All Projects")')

@@ -18,7 +18,7 @@ const ITEMS: GalleryItem[] = [
   { src: '/gallery/bathroom-crittall-screen.jpg', alt: 'White-tiled bathroom with over-bath shower and black crittall-style glass screen', category: 'bathrooms', width: 1080, height: 1440 },
   { src: '/gallery/cloakroom-oak-slat.jpg', alt: 'Downstairs cloakroom with oak slat feature wall, round mirror and herringbone floor', category: 'bathrooms', width: 1080, height: 1440 },
   { src: '/gallery/bathroom-freestanding-bath.jpg', alt: 'Freestanding bath with chrome floor-standing tap and wood-effect tiled feature wall', category: 'bathrooms', width: 1080, height: 1440 },
-  { src: '/gallery/wetroom-walk-in-shower.jpg', alt: 'Walk-in shower room with glass screen, grey vanity unit and wood-effect flooring', category: 'wet-rooms', width: 1080, height: 1440 },
+  { src: '/gallery/bathroom-walk-in-shower.jpg', alt: 'Bathroom with walk-in shower enclosure, glass screen, grey vanity unit and wood-effect flooring', category: 'bathrooms', width: 1080, height: 1440 },
   { src: '/gallery/bedroom-barn-door.jpg', alt: 'Bedroom with oak sliding barn door, herringbone flooring and ensuite beyond', category: 'bedroom', width: 1080, height: 1440 },
   { src: '/gallery/garden-store.jpg', alt: 'Bespoke timber garden store with apex roof built from pressure-treated cladding', category: 'other', width: 1080, height: 1440 },
   { src: '/gallery/victorian-floor-tiling.jpg', alt: 'Restored Victorian geometric mosaic hallway floor in terracotta, slate and cream tiles', category: 'other', width: 1080, height: 810 },
@@ -28,7 +28,6 @@ const FILTERS = [
   { id: 'all', label: 'All Projects' },
   { id: 'kitchens', label: 'Kitchens' },
   { id: 'bathrooms', label: 'Bathrooms' },
-  { id: 'wet-rooms', label: 'Wet Rooms' },
   { id: 'bedroom', label: 'Bedrooms' },
   { id: 'other', label: 'Other' },
 ]

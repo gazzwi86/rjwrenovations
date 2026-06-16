@@ -63,8 +63,9 @@
   .trust-badge-link:hover { opacity: 0.8; }
   .trust-item strong {
     display: block;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
     color: var(--text);
     line-height: 1.2;
   }
@@ -96,9 +97,18 @@
     .trust-sep {
       display: block;
       flex-shrink: 0;
-      width: 1px;
-      height: 40px;
-      background: var(--border-sub);
+      width: 2px;
+      height: 60px;
+      border-radius: 2px;
+      background: linear-gradient(
+        180deg,
+        transparent,
+        var(--blue) 25%,
+        var(--blue-accent) 50%,
+        var(--blue) 75%,
+        transparent
+      );
+      opacity: 0.7;
     }
   }
 </style>
