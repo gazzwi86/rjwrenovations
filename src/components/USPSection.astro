@@ -42,9 +42,8 @@ const usps = [
     <dl class="stats-strip" aria-label="Key statistics">
       {stats.map((s, i) => (
         <div class="stat-item" data-reveal data-delay={String(i + 1)}>
-          <dt class="sr-only">{s.label}</dt>
+          <dt class="stat-label">{s.label}</dt>
           <dd class="stat-number" data-count={s.value}>{s.value}</dd>
-          <span class="stat-label">{s.label}</span>
         </div>
       ))}
     </dl>
@@ -89,6 +88,8 @@ const usps = [
     gap: 6px;
   }
   .stat-number {
+    order: -1;
+    margin: 0;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
     color: var(--red-text);
